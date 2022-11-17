@@ -1,6 +1,5 @@
 package com.example.numbercomposition.domain.usecases
 
-import com.example.numbercomposition.domain.entity.GameSettings
 import com.example.numbercomposition.domain.entity.Question
 import com.example.numbercomposition.domain.repository.GameRepository
 

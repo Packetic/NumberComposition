@@ -5,15 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.numbercomposition.R
 import com.example.numbercomposition.databinding.FragmentGameBinding
 import com.example.numbercomposition.domain.entity.GameResult
 import com.example.numbercomposition.domain.entity.GameSettings
 import com.example.numbercomposition.domain.entity.Level
+import com.example.numbercomposition.presentation.GameViewModel
 
 class GameFragment : Fragment() {
 
     private lateinit var level: Level
+    val viewModel: GameViewModel by lazy {
+        ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
+        )[GameViewModel::class.java]
+    }
 
     private var _binding: FragmentGameBinding? = null
     private val binding: FragmentGameBinding

@@ -9,4 +9,7 @@ data class GameResult(
     val numOfRightAnswers: Int,
     val numOfQuestions: Int,
     val gameSettings: GameSettings
-) : Parcelable
+) : Parcelable {
+    val numOfRightAnswersString: String
+        get() = numOfRightAnswers.toString()
+}
